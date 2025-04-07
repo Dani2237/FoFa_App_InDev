@@ -4,5 +4,4 @@ Hello, the development of this project has not started yet, for further informat
 
 If you have any questions, please feel free to open a ticket in the ticket-support section.
 
-Link to the Discord Server:
-    https://discord.gg/bUgAa9fAFJ
+Link to the Discord Server: https://discord.gg/bUgAa9fAFJ
