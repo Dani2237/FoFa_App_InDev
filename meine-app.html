@@ -13,40 +13,74 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
         }
         #app {
             text-align: center;
             padding: 20px;
-            background: white;
+            background: rgb(0, 47, 255);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007BFF;
-            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: 'Courier New', monospace;
+            border: 3px solid #000000;
+            border-radius: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             cursor: pointer;
+            position: relative;
         }
-        button:hover {
-            background-color: #0056b3;
+        .hover-text {
+            position: fixed; /* Position relativ zum gesamten Fenster */
+            background-color: #000000;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            pointer-events: none; /* Text blockiert keine Klicks */
+            z-index: 1000; /* Text bleibt über anderen Elementen */
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <h1>Willkommen zu meiner App!</h1>
-        <p>Dies ist eine einfache App. Weitere Funktionen können später hinzugefügt werden.</p>
-        <button onclick="zeigeNachricht()">Klick mich!</button>
+        <h1>Thank you for testing the FormFabrik app!</h1>
+        <p>FoFa_App_InDev-0.0.1</p>
+        <button id="hover-button">
+            Press me!
+        </button>
+        <div class="hover-text" id="hover-text">This is a cursor hover test</div>
     </div>
-
     <script>
-        function zeigeNachricht() {
-            alert('Hallo! Dies ist eine einfache Nachricht.');
-        }
+        const button = document.getElementById('hover-button');
+        const hoverText = document.getElementById('hover-text');
+
+        // Zeigt den Text an und bewegt ihn mit der Maus
+        button.addEventListener('mousemove', (event) => {
+            hoverText.style.display = 'block';
+            hoverText.style.left = `${event.pageX + 10}px`; // Position relativ zur gesamten Seite
+            hoverText.style.top = `${event.pageY + 10}px`; // Position relativ zur gesamten Seite
+        });
+
+        // Versteckt den Text, wenn die Maus den Button verlässt
+        button.addEventListener('mouseleave', () => {
+            hoverText.style.display = 'none';
+        });
+
+        // Klick-Event für den Button
+        button.addEventListener('click', () => {
+            alert('Your left mouse button was clicked!');
+        });
+
+        // Rechtsklick-Event für den Button
+        button.addEventListener('contextmenu', (event) => {
+            event.preventDefault(); // Verhindert das Standard-Kontextmenü
+            alert('Your right mouse button was clicked!');
+        });
     </script>
 </body>
 </html>
