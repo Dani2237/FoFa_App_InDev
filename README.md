@@ -1,6 +1,6 @@
 # FoFa_App_InDev-0.0.1
 
-// 07.04.2025
+### Last updated: 07.04.2025
 
 Hello, the development of this project has now officially started, for further information please click on the link below and join the discord server.
 
