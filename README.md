@@ -1,4 +1,4 @@
-# FoFa_App_InDev-0.0.1
+# FoFa_App_InDev-0.0.2
 
 ### Last updated: 07.04.2025
 
