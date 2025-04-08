@@ -10,77 +10,55 @@
             margin: 0;
             padding: 0;
             display: flex;
+            justify-content: center; /* Zentriert die Rechtecke horizontal */
+            align-items: flex-start; /* Richtet die Rechtecke oben aus */
+            height: 100vh;
+            background-color: #ffffff; /* Weißer Hintergrund */
+            flex-wrap: wrap; /* Rechtecke umbrechen, wenn kein Platz mehr ist */
+        }
+        .rectangle {
+            width: 300px;
+            height: 50px;
+            margin: 10px; /* Abstand zwischen den Rechtecken */
+            background-color: #ffffff;
+            border-radius: 25px; /* Halb so viel wie die Höhe für abgerundete Ecken */
+            border: 2px solid #000000; /* Schwarzer Rand */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
         }
-        #app {
-            text-align: center;
-            padding: 20px;
-            background: rgb(0, 47, 255);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .special-rectangle {
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff; /* Weißer Hintergrund */
+            border-radius: 50%; /* Macht den Container rund */
+            border: 2px solid #000000; /* Dunkler Rand */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px; /* Abstand zwischen den Rechtecken */
         }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            font-family: 'Courier New', monospace;
-            border: 3px solid #000000;
-            border-radius: 20px;
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-            position: relative;
-        }
-        .hover-text {
-            position: fixed; /* Position relativ zum gesamten Fenster */
-            background-color: #000000;
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: none;
-            pointer-events: none; /* Text blockiert keine Klicks */
-            z-index: 1000; /* Text bleibt über anderen Elementen */
+        .special-rectangle img {
+            width: 40px; /* Gleiche Breite wie der Kreis */
+            height: auto; /* Gleiche Höhe wie der Kreis */
+            border-radius: 50%; /* Macht das Bild rund */
+            object-fit: cover; /* Schneidet das Bild zu, um es perfekt einzupassen */
+            margin: 0; /* Entfernt zusätzlichen Abstand */
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <h1>Thank you for testing the FormFabrik app!</h1>
-        <p>FoFa_App_InDev-0.0.1</p>
-        <button id="hover-button">
-            Press me!
-        </button>
-        <div class="hover-text" id="hover-text">This is a cursor hover test</div>
-    </div>
-    <script>
-        const button = document.getElementById('hover-button');
-        const hoverText = document.getElementById('hover-text');
-
-        // Zeigt den Text an und bewegt ihn mit der Maus
-        button.addEventListener('mousemove', (event) => {
-            hoverText.style.display = 'block';
-            hoverText.style.left = `${event.pageX + 10}px`; // Position relativ zur gesamten Seite
-            hoverText.style.top = `${event.pageY + 10}px`; // Position relativ zur gesamten Seite
-        });
-
-        // Versteckt den Text, wenn die Maus den Button verlässt
-        button.addEventListener('mouseleave', () => {
-            hoverText.style.display = 'none';
-        });
-
-        // Klick-Event für den Button
-        button.addEventListener('click', () => {
-            alert('Your left mouse button was clicked!');
-        });
-
-        // Rechtsklick-Event für den Button
-        button.addEventListener('contextmenu', (event) => {
-            event.preventDefault(); // Verhindert das Standard-Kontextmenü
-            alert('Your right mouse button was clicked!');
-        });
-    </script>
+    <div class="rectangle">🏡 FoFa Main menu</div>
+    <div class="rectangle">🛣️ Roadmap of the Development</div>
+    <div class="rectangle">🤔 What is this app?</div>
+    <a href="https://example.com/settings" target="_blank" class="rectangle">⚙️ Settings</a>
+    <a href="https://discord.gg/7QV5vffm" class="special-rectangle" target="_blank">
+        <img src="discord _logo.jpg" alt="Discord">
+    </a>
 </body>
 </html>
